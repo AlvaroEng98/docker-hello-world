@@ -1,0 +1,16 @@
+name: 'Hola mundo'
+
+description: 'Saludar a alguien'
+inputs:
+  who-to:
+    description: 'A quien saludo'
+    required: true
+    default: 'Mundo'
+outputs:
+  time:
+    description: 'Fecha'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs:who-to }}
